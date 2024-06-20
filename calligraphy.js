@@ -1,7 +1,7 @@
 
 var bgColor;
 var imgDrawing;
-var gridSizePreset = 10;
+var gridSizePreset = 20;
 var gridSizeSteps = 5;
 var gridSize;
 var brushColor;
@@ -223,7 +223,7 @@ function rasterize() {
       if (brightness(imgDrawing.get(x, y)) >= threshold) {
         stroke(0);
         rect(x, y, gridSize-2, gridSize-2);    
-        line(mouseX, mouseY, pmouseX, pmouseY);  
+      //  line(mouseX, mouseY, pmouseX, pmouseY);  
       }
     }
   }
