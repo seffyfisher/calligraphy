@@ -19,7 +19,7 @@ function preload() {
   bgColor = color(255);
   interfaceColor = color(0);
   brushColor = color(255);
-  gridElementColor = color(128);
+  gridElementColor = color(0);
   interfaceColor = color(0);
 }
 
@@ -98,7 +98,7 @@ function drawOnImg() {
     var tempT1 = createVector(touches[0].x, touches[0].y);
     var tempPT1 = createVector(ptouches[0].x, ptouches[0].y);
     var tempT2 = createVector(touches[1].x, touches[1].y);
-    var tempPT2 = createVector(ptouches[01].x, ptouches[1].y);
+    var tempPT2 = createVector(ptouches[0o1].x, ptouches[1].y);
     var dist1 = tempT1.dist(tempPT1);
     var dist2 = tempT2.dist(tempPT2);
 
@@ -139,6 +139,7 @@ function displayTouch() {
     if ((touches[0].x > width-205 && touches[0].y < 70) || (touches[0].x > width-70 && touches[0].y > height - 260)) {
     } else {
       ellipse(gridify(touches[0].x), gridify(touches[0].y), this.touchSize, this.touchSize);
+
     }
   } else if (touches.length > 1) {
 
@@ -220,7 +221,9 @@ function rasterize() {
   for (let x = gridSize/2; x<=imgDrawing.width; x+= gridSize) {
     for (let y = gridSize/2; y<=imgDrawing.height; y+= gridSize) {
       if (brightness(imgDrawing.get(x, y)) >= threshold) {
-        ellipse(x, y, gridSize-2, gridSize-2);
+        stroke(0);
+        rect(x, y, gridSize-2, gridSize-2);    
+        line(mouseX, mouseY, pmouseX, pmouseY);  
       }
     }
   }
