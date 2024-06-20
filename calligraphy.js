@@ -1,7 +1,7 @@
 
 var bgColor;
 var imgDrawing;
-var gridSizePreset = 25;
+var gridSizePreset = 10;
 var gridSizeSteps = 5;
 var gridSize;
 var brushColor;
